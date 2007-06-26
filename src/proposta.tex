@@ -1,0 +1,83 @@
+\documentclass{article}
+
+\usepackage[latin1]{inputenc}
+\usepackage[brazil]{babel}
+
+\title{Proposta de Especificação de Software}
+\author{Rodrigo Setti \and Lucas Gameiro \and Leandro Boscariol \and Flávio Leal}
+
+\begin{document}
+
+\maketitle
+
+\section{Missão do Produto}
+
+O Produto ``BosCabelereiros'' visa fornecer apoio informatizado baseado em Web no controle de uma empresa no ramo de serviços de Salão de Beleza e venda de produtos relacionados.
+
+Este serviço informatizado presenteará a empresa com um diferencial único na venda de serviços, pois os clientes terão acesso à agendamento vinte e quatro horas, visão mais clara da agenda(horários disponíveis ou não), e a não necessidade de intermédio de um atendente corta custos da empresa com telefone e funcionário.
+
+Concomitante com o agendamento de serviços a empresa terá a disposição informações de cadastro dos seus clientes para futuras estratégias de marketing, além de apresentar junto ao site um catálogo de produtos vendidos pela empresa.
+
+\section{Lista de funções}
+
+\newcounter{ordem}
+\stepcounter{ordem}
+
+\begin{tabular}{|p{40pt}|p{80pt}|p{80pt}|p{90pt}|}
+
+\hline
+
+\textbf{Número de ordem} & \textbf{Nome da função} & \textbf{Necessidades} & \textbf{Benefícios} \\
+
+\hline \hline
+
+\arabic{ordem} & Estoque & Cadastro e controle de produtos & 
+Agilidade no controle de estoque e pedidos de fornecimento.\\
+\hline \stepcounter{ordem}
+\arabic{ordem} & Gerência de Clientes & Cadastro de clientes on--line &
+Controle de informações sobre os clientes e segurança para agendamentos.\\
+\hline \stepcounter{ordem}
+\arabic{ordem} & Catálogo & Catálogo de produtos on--line &
+Maior abrangência de mercado, demonstração dos produtos para maior grupo de clientes.\\
+\hline \stepcounter{ordem}
+\arabic{ordem} & Gerência de Serviços & Agendamento on--line de serviços & 
+Economia de recursos para atender agendamento de clientes, maior flexibilidade nessa operação. \\
+\hline
+\end{tabular}
+
+\section{Requisitos de Qualidade}
+
+\begin{itemize}
+
+\item A interface gráfica do programa deve ser simples e agradável(RNF).
+\item Os administradores devem ter senha e acesso total aos bancos de dados.
+\item Os produtos devem ter preço e uma ou mais fotos.
+\item Os administradores devem definir o tempo disponível para agendamento.
+\item O agendamento só deve ser para clientes cadastrados.
+
+\end{itemize}
+
+\section{Metas Gerenciais}
+
+\begin{itemize}
+
+\item Prazo máximo de desenvolvimento: 12 meses(um ano), dentre os quais
+serão discutidos prazos para pesquisa das tecnologias a serem empregadas, implementação, documentação e testes.
+\item Custo máximo de desenvolvimento: R\$ 0,00(zero reais).
+\item Orçamento total do produto final: R\$ 0,00(zero reais).
+
+\end{itemize}
+
+\section{Outros Aspectos}
+
+Ítens a serem definidos:
+
+\begin{itemize}
+
+\item Tecnologia a ser utilizada para implementação.
+\item Estudar possibilidade de pagamento on--line por serviços e produtos.
+
+\end{itemize}
+
+\end{document}
+
