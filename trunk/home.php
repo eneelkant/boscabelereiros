@@ -1,12 +1,10 @@
 <?php
 
-	include('Pagina.php');
+	include('pagina.php');
 
 	$home = new Pagina("Home");
 	
 	$home->adicionarCSS('base.css');
-	
-	$home->adicionarJS('base.js');
 	
 	$home->inicio();
 	
