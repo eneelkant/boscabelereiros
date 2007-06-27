@@ -1,5 +1,7 @@
 <?php
 
+include("config.php");
+
 class Banco{
 
 	private $mConexao;
@@ -14,13 +16,13 @@ class Banco{
 	*/
 	public __construct()
 	{
-		$mConexao = mysql_connect("localhost","root","");
+		$mConexao = mysql_connect($host,$user,$password);
 		if(!$mConexao)
 		{
 			die("Não foi possível conectar ao BD: " . mysql_error() );
 		}
 
-		if( !mysql_select_db( "rodrigo", $mConexao ) )
+		if( !mysql_select_db( $database, $mConexao ) )
 		{
 			die("Não foi possível encontrar a BD: " . mysql_error() );
 		}
@@ -57,15 +59,6 @@ class Banco{
 	*/
 	public getResult()
 	{
-		if( $mResource == TRUE )
-		{
-			return TRUE;
-		}
-		else if( $mResource == FALSE )
-		{
-			return FALSE;
-		}
-
 		return mysql_fetch_array( $mResource );
 	}
 }
