@@ -38,7 +38,7 @@ class Pagina{
 		echo "\t\t\t\t</div>\n";
 		echo "\t\t\t</div>\n";
 		echo "\t\t\t<div id='conteudo'>\n";
-		echo "\t\t\t\t<h1 id='tituloConteudo' class='fundoAzul'>$titulo</h1>"
+		echo "\t\t\t\t<h1 id='tituloConteudo' class='fundoAzul'>$titulo</h1>";
 	}
 	
 	public function fim()
