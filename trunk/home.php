@@ -1,6 +1,6 @@
 <?php
 
-	include('pagina.php');
+	include_once('pagina.php');
 
 	$home = new Pagina("Home");
 	

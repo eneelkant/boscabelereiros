@@ -1,6 +1,6 @@
 <?php
 
-include ("banco.php");
+include_once ("banco.php");
 
 /**
  Extende a classe de acesos ao banco para
