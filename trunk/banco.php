@@ -1,6 +1,5 @@
 <?php
 
-include("config.php");
 
 class Banco{
 
@@ -14,15 +13,15 @@ class Banco{
 		ERROS - trata os erros em caso de não encontrar o banco
 	ou de não encontrar o database
 	*/
-	public __construct()
+	public function __construct()
 	{
-		$mConexao = mysql_connect($host,$user,$password);
-		if(!$mConexao)
+		$this->mConexao = mysql_connect("localhost","root","");
+		if(! $this->mConexao)
 		{
 			die("Não foi possível conectar ao BD: " . mysql_error() );
 		}
 
-		if( !mysql_select_db( $database, $mConexao ) )
+		if( !mysql_select_db( "boscabelereiros", $this->mConexao ) )
 		{
 			die("Não foi possível encontrar a BD: " . mysql_error() );
 		}
@@ -31,25 +30,25 @@ class Banco{
 	/*
 		DESTRUTOR - fecha a conexao
 	*/
-	public __destruct()
+	public function __destruct()
 	{
-		mysql_close( $mConexao );
+		mysql_close( $this->mConexao );
 	}
 
 	/*
 		GETQUERY - faz a requisicao e armazena o resource em um
 	atributo se quiser obter a resposta usar getResult
 	*/
-	public getQuery( $query )
+	public function getQuery( $query )
 	{
-		$resultado = mysql_query( $query, $mConexao );
+		$resultado = mysql_query( $query, $this->mConexao );
 		if( !$resultado )
 		{
 			echo "Erro de SQL: " . mysql_error();
 			return FALSE;
 		}
 		
-		$mResource = $resultado;
+		$this->mResource = $resultado;
 	}
 
 	/*
@@ -57,9 +56,9 @@ class Banco{
 	getQuery se a ultima getQuery for um SELECT, se nao retorns
 	TRUE se efetuou ou FALSE se nao efetuou
 	*/
-	public getResult()
+	public function getResult()
 	{
-		return mysql_fetch_array( $mResource );
+		return mysql_fetch_array( $this->mResource );
 	}
 }
 ?>
