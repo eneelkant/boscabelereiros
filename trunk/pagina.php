@@ -21,7 +21,7 @@ class Pagina{
 		echo "\t\t<script type='text/javascript' src='$vJs'></script>\n";
 	}
 
-	public function inicio()
+	public function inicio($titulo)
 	{
 		echo "\t</head>\n\t<body>\n";
 		echo "\t\t<div id='pagina'>\n";
@@ -38,13 +38,14 @@ class Pagina{
 		echo "\t\t\t\t</div>\n";
 		echo "\t\t\t</div>\n";
 		echo "\t\t\t<div id='conteudo'>\n";
+		echo "\t\t\t\t<h1 id='tituloConteudo' class='fundoAzul'>$titulo</h1>"
 	}
 	
 	public function fim()
 	{
 		echo "\t\t\t</div>\n";
 		echo "\t\t\t<div id='rodape'>\n";
-		echo "\t\t\t\t<ul id='menu'>\n";
+		echo "\t\t\t\t<ul id='menuRodape'>\n";
 		echo "\t\t\t\t\t<li>Home</li>\n";
 		echo "\t\t\t\t\t<li>Produtos</li>\n";
 		echo "\t\t\t\t\t<li>Agenda</li>\n";
