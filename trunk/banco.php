@@ -39,7 +39,7 @@ class Banco{
 		GETQUERY - faz a requisicao e armazena o resource em um
 	atributo se quiser obter a resposta usar getResult
 	*/
-	public function getQuery( $query )
+	protected function getQuery( $query )
 	{
 		$resultado = mysql_query( $query, $this->mConexao );
 		if( !$resultado )
@@ -56,7 +56,7 @@ class Banco{
 	getQuery se a ultima getQuery for um SELECT, se nao retorns
 	TRUE se efetuou ou FALSE se nao efetuou
 	*/
-	public function getResult()
+	protected function getResult()
 	{
 		return mysql_fetch_array( $this->mResource );
 	}
