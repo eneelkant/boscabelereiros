@@ -1,0 +1,38 @@
+.navegador {	padding-bottom: 30px;
+	text-align: center;
+	border: 1px solid #D5E6EE;
+	background: #EEF5F9;
+}
+.navegador a {
+	padding: 0px 20px 0px 20px;
+	text-decoration: none;
+	line-height: 200%;
+	color: #237898;
+}
+
+.navegador a:hover {
+	text-decoration: none;
+	color: #002E5B;
+}
+
+.anterior {
+	float: left;
+}
+
+.proximo {
+	float: right;
+}
+
+#produtos {
+	list-style: none;
+}
+
+#produtos li {
+	padding-bottom: 25px;
+	border-bottom: 1px solid gray;
+}
+
+#produtos img {
+	float: left;
+	margin: 0 20px 25px 0;
+}
