@@ -56,7 +56,7 @@ class Banco{
 	getQuery se a ultima getQuery for um SELECT, se nao retorns
 	TRUE se efetuou ou FALSE se nao efetuou
 	*/
-	protected function getResult()
+	public function getResult()
 	{
 		return mysql_fetch_array( $this->mResource );
 	}

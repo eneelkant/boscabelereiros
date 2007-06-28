@@ -57,6 +57,7 @@ CREATE TABLE boscabelereiros.Produto (
 	nome			VARCHAR(40) NOT NULL,
 	descricao		VARCHAR(50),
 	preco			FLOAT,
+	imagem			VARCHAR(60),
 
 	PRIMARY KEY(id)
 )
