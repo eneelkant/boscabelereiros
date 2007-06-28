@@ -23,7 +23,12 @@ class CrudProduto extends Banco {
 
 	public function getByID($id)
 	{
-		$this.getQuery("SELECT * FROM boscabelereiros.Produto WHERE id = $id");
+		$this->getQuery("SELECT * FROM boscabelereiros.Produto WHERE id = $id");
+	}
+
+	public function getByIDRange($min, $max)
+	{
+		$this->getQuery("SELECT * FROM boscabelereiros.Produto WHERE id >= $min AND id <= $max");
 	}
 
 	/**** Remove produto pelo id *******/
