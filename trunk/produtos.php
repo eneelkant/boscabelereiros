@@ -66,31 +66,37 @@ $pagina->inicio("Produtos");
 
 /* Verifica se eh pra remover algum item */
 if ($_GET['remove']) {
-	$produtos->remover($_GET['remover']);
+	$produtos->remover($_GET['remove']);
 }	
 
 /* Verifica se eh pra adicionar algum item */
-if ($_POST['nome'] && $_POST['descricao'] && $_POST['preco'] && $_POST['imagem']) {
-	$produtos->adicionar($_POST);
+if ($_POST['adicionar']) {
+	
+	/* testa extensao do arquivo */
+	if ($_FILES['imagem']['type'] == "image/gif" ||
+		$_FILES['imagem']['type'] == "image/jpg" ||
+		$_FILES['imagem']['type'] == "image/png" ||
+		$_FILES['imagem']['type'] == "image/jpeg")
+	{
+		/* upload arquivo */
+		move_uploaded_file($_FILES['imagem']['tmp_name'], '/var/www/boscabelereiros/img/produtos/' . $_FILES['imagem']['name'])
+		or die("nao foi possivel carregar arquivo: " . $_FILES['imagem']['name']);
+
+		/* insere no bd */
+		$produtos->adicionar($_POST);
+	}
+	else
+	{
+		echo "<p>Tipo de arquivo de imagem invalido: " . $_FILES['imagem']['name'] . "</p>\n";
+	}
 }
 
 /* verifica qual pagina ira imprimir */
 if ($_GET['pag'])
 	$pag = $_GET['pag'];
+else if ($_POST['pag'])
+	$pag = $_POST['pag'];
 
-/* Imprime formulario de adicionar produto */
-?>
-
-<form class='admin action='produtos.php' method='post'>	
-	<p>Inserir produto</p><br>
-	Nome o produto: <input type=text name='nome'><br>
-	Descrição: <input type=text name='descricao'><br>
-	Preço: <input type=text name='preco'><br>
-	Imagem: <input type=file name='imagem'><br><br>
-	<input type=submit><br>
-</form>
-
-<?php
 printNavegador($produtos, $pag, $produtos_por_pagina);
 
 /* pega do banco os produtos */
@@ -102,11 +108,27 @@ while ($item = $produtos->getResult()) {
 	
 	echo "\t<li><img src='img/produtos/" . $item["imagem"] . "' /><h1>" . $item["nome"] . 
 	"</h1><p class='descricao'>" . $item["descricao"] . "</p><p class='preco'> R$ " . $item["preco"] . "</p>" .
-	"<div class='admin' class='remover'><a href='produtos.php?remove=$item[0]'>remover</a></div></li>\n";
+	"<div class='admin' class='remover'><a href='produtos.php?remove=$item[0]&pag=$pag'>remover</a></div></li>\n";
 }
 echo "</ul>\n";
 
 printNavegador($produtos, $pag, $produtos_por_pagina);
+
+/* Imprime formulario de adicionar produto */
+?>
+
+<form enctype="multipart/form-data" action="produtos.php" method="post">
+	<p>Inserir produto</p><br>
+	<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
+	<input type=hidden value=<?php $pag ?> />
+	Nome o produto: <input type=text name='nome' /><br>
+	Descrição: <input type=text name='descricao' /><br>
+	Preço: <input type=text name='preco' /><br>
+	Imagem: <input type=file name='imagem' /><br><br>
+	<input type=submit name='adicionar' value='Adicionar'/><br>
+</form>
+
+<?php
 
 $pagina->fim();
 
