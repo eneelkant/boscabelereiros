@@ -35,7 +35,7 @@ class CrudProduto extends Banco {
 
 	public function remover($id)
 	{
-		$this->getQuery("DELETE FROM boscabelereiros.Produto WHERE id = $id");
+		$this->getQuery("DELETE FROM boscabelereiros.Produto WHERE id=$id");
 	}
 
 	/***** Altera produto existente *******/
@@ -44,7 +44,7 @@ class CrudProduto extends Banco {
 	{
 		$this->getQuery("UPDATE boscabelereiros.Produto SET nome= " . $array['nome'] .
 						", descricao= " . $array['descricao'] . ", preco= " . $array['preco'] . 
-						", imagem= " . $array['imagem'] );
+						", imagem= " . $array['imagem'] . " WHERE id = $id");
 	}
 
 	/****** Adiciona novo produto ********/

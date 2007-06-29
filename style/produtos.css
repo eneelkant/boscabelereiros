@@ -1,11 +1,10 @@
 .navegador {
-	padding-bottom: 35px;
+
 	text-align: center;
 	border: 1px solid #D5E6EE;
 	background: #EEF5F9;
 }
 .navegador a {
-	padding: 0px 20px 0px 20px;
 	text-decoration: none;
 	line-height: 200%;
 	color: #237898;
@@ -18,14 +17,17 @@
 
 .navegador .anterior {
 	float: left;
+	padding: 0px 20px 0px 20px;
 }
 
 .navegador .proximo {
+	padding: 0px 20px 0px 20px;
 	float: right;
 }
 
 .navegador .paginas li {
 	display: inline;
+	padding: 0 20px 0 20px;
 }
 
 #produtos li {
