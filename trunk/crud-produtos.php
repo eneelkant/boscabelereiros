@@ -51,8 +51,8 @@ class CrudProduto extends Banco {
 
 	public function adicionar($array)
 	{
-		$this->getQuery("INSERT INTO boscabelereiros.Produto VALUES (null, " . $array['nome'] . "
-						, " . $array['descricao'] . ", " . $array['preco'] . ", " . $array['imagem']);
+		$this->getQuery("INSERT INTO boscabelereiros.Produto VALUES (null, '" . $array['nome'] . 
+						"', '" . $array['descricao'] . "', " . $array['preco'] . ", '" . $array['imagem'] . "')");
 	}
 }
 

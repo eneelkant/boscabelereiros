@@ -1,10 +1,16 @@
 <?php
 
+/* inclui */
+include_once("pagina.php");
+include_once("crud-produtos.php");
+
 /* definicoes */
 $produtos_por_pagina = 5;
 $pag = 1;
 
-
+/**
+ * Imprime o navegador (<< anterior 1 2 3 4 5 proximo >>)
+ */
 function printNavegador($produtos, $pag, $produtos_por_pagina)
 {
 	$anterior = $pag-$produtos_por_pagina;
@@ -18,19 +24,35 @@ function printNavegador($produtos, $pag, $produtos_por_pagina)
 	$produtos->getByID($anterior);
 	if ($produtos->getResult())
 	{
-		echo "<a class='anterior' href='produtos.php?pag=$anterior'>&laquo; Anterior</a>\n";
+		echo "\t<a class='anterior' href='produtos.php?pag=$anterior'>&laquo; Anterior</a>\n";
 	}
 	$produtos->getByID($proximo);
 	if ($produtos->getResult())
 	{
-		echo "<a class='proximo' href='produtos.php?pag=$proximo'>Proximo &raquo;</a>\n";
+		echo "\t<a class='proximo' href='produtos.php?pag=$proximo'>Proximo &raquo;</a>\n";
 	}
+
+	/* Imprime paginas */
+	echo "\t<ul class='paginas'>\n";
+
+	$pag_count = 1;
+	$item = 1;
+	$produtos->getByID($pag_count);
+	while ($produtos->getResult())
+	{
+		if ($pag >= $pag_count && $pag < $pag_count+$produtos_por_pagina)
+			echo "\t\t<li>$item</li>\n";
+		else
+			echo "\t\t<li><a href='produtos.php?pag=$pag_count'>$item</a></li>\n";
+
+		$pag_count += $produtos_por_pagina;
+		$item++;
+		$produtos->getByID($pag_count);
+	}
+
+	echo "\t</ul>\n";
 	echo "</div>\n";
 }
-
-/* inclui */
-include_once("pagina.php");
-include_once("crud-produtos.php");
 
 /* instancia pagina */
 $pagina = new Pagina("Produtos");
@@ -48,9 +70,9 @@ if ($_GET['remove']) {
 }	
 
 /* Verifica se eh pra adicionar algum item */
-//if ($_POST['nome'] && $_POST['descricao'] && $_POST['preco'] && $_POST['imagem']) {
-//	$produtos->adicionar($_POST);
-//}
+if ($_POST['nome'] && $_POST['descricao'] && $_POST['preco'] && $_POST['imagem']) {
+	$produtos->adicionar($_POST);
+}
 
 /* verifica qual pagina ira imprimir */
 if ($_GET['pag'])
@@ -59,7 +81,7 @@ if ($_GET['pag'])
 /* Imprime formulario de adicionar produto */
 ?>
 
-<form class='admin action='produtos.php' method='get'>	
+<form class='admin action='produtos.php' method='post'>	
 	<p>Inserir produto</p><br>
 	Nome o produto: <input type=text name='nome'><br>
 	Descrição: <input type=text name='descricao'><br>
