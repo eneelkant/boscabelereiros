@@ -4,9 +4,9 @@
 
 	$home = new Pagina("Home");
 	
-	$home->adicionarCSS('base.css');
+	$home->adicionarCSS('home.css');
 	
-	$home->inicio();
+	$home->inicio("Sobre a empresa");
 	
 	$home->fim();
 
