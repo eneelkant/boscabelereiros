@@ -19,7 +19,7 @@ class Pagina{
 
 	public function adicionarJS($vJs)
 	{
-		echo "\t\t<script type='text/javascript' src='$vJs'></script>\n";
+		echo "\t\t<script type='text/javascript' src='script/$vJs'></script>\n";
 	}
 
 	public function inicio($titulo)
