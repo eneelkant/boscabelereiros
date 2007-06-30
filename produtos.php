@@ -57,6 +57,7 @@ function printNavegador($produtos, $pag, $produtos_por_pagina)
 /* instancia pagina */
 $pagina = new Pagina("Produtos");
 $pagina->adicionarCSS("produtos.css");
+$pagina->adicionarJS("mktree.js");
 
 /* instancia banco */
 $produtos = new CrudProduto();
@@ -128,16 +129,19 @@ printNavegador($produtos, $pag, $produtos_por_pagina);
 /* Imprime formulario de adicionar produto */
 ?>
 
-<form enctype="multipart/form-data" action="produtos.php" method="post">
-	<p>Inserir produto</p><br>
+<ul class='mktree' id='tree1'> 
+<li>Adicionar Produto <ul> <li>
+<form id='adicionar' enctype="multipart/form-data" action="produtos.php" method="post">
+	<p>Adicionar novo produto</p><br>
 	<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 	<input type=hidden value=<?php $pag ?> />
 	Nome o produto: <input type=text name='nome' /><br>
 	Descrição: <input type=text name='descricao' /><br>
 	Preço: <input type=text name='preco' /><br>
 	Imagem: <input type=file name='imagem' /><br><br>
-	<input type=submit name='adicionar' value='Adicionar'/><br>
+	<input id='botao' type=submit name='adicionar' value='Adicionar'/><br>
 </form>
+</li></ul></li></ul>
 
 <?php
 
