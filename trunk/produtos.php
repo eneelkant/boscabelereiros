@@ -66,6 +66,14 @@ $pagina->inicio("Produtos");
 
 /* Verifica se eh pra remover algum item */
 if ($_GET['remove']) {
+	/* pega imagem para deleta-la */
+	$produtos->getByID($_GET['remove']);
+	$item = $produtos->getResult();
+
+	/* deleta imagem */
+	unlink('/var/www/boscabelereiros/img/produtos/' . $item['imagem']);
+
+	/* deleta do banco de dados */
 	$produtos->remover($_GET['remove']);
 }	
 
@@ -83,7 +91,10 @@ if ($_POST['adicionar']) {
 		or die("nao foi possivel carregar arquivo: " . $_FILES['imagem']['name']);
 
 		/* insere no bd */
-		$produtos->adicionar($_POST);
+		$dados = array('nome' => $_POST['nome'], 'descricao' => $_POST['descricao'],
+						'preco' => $_POST['preco'], 'imagem' => $_FILES['imagem']['name']);
+
+		$produtos->adicionar($dados);
 	}
 	else
 	{
