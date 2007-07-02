@@ -26,7 +26,7 @@ class Pagina{
 	{
 		echo "\t</head>\n\t<body>\n";
 		echo "\t\t<div id='pagina'>\n";
-		echo "\t\t\t<div id='topo'>\n\t\t\t\t<h1 id='logo'>Boscabelereiros</h1>\n";
+		echo "\t\t\t<div id='topo'>\n\t\t\t\t<h1 id='logo'><div id='banner'></div></h1>\n";
 		echo "\t\t\t\t<ul id='menu'>\n";
 		echo "\t\t\t\t\t<li>Home</li>\n";
 		echo "\t\t\t\t\t<li>Produtos</li>\n";
