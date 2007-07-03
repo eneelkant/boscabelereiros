@@ -23,6 +23,7 @@ class CrudUsuario extends Banco
 	/*lembrar de adicionar tb na tabela cliente*/
 	//SELECT TABLE_NAME,AUTO_INCREMENT FROM information_schema.`TABLES` WHERE TABLE_NAME LIKE 'Pessoa'
 	// query acima usada para obter o indice do AUTO_INCREMENT, ou seja, o ultimo dado inserido	
+//select Cliente.id, Pessoa.* from Cliente inner join Pessoa ON Cliente.pessoa=Pessoa.id;
 	}
 	
 	/* remove dados do cliente de acordo com seu id */
@@ -48,8 +49,7 @@ class CrudUsuario extends Banco
 	/* lista os dados por cliente de acordo com seu id */
 	public function listaDados( $id )
 	{/*idem funcao acima*/
-		$this->getQuery( "SELECT * FROM boscabelereiros.Cliente WHERE id = $id" );
-		$this->getQuery(  );
+		$this->getQuery( "SELECT boscabelereiros.Cliente.id, boscabelereiros.Pessoa.* FROM boscabelereiros.Cliente INNER JOIN boscabelereiros.Pessoa ON boscabelereiros.Cliente.pessoa = boscabelereiros.Pessoa.id WHERE id = $id" );
 	}
 	
 	/* lista todos os clientes no banco */
