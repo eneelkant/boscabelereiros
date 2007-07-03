@@ -49,10 +49,10 @@ class Pagina{
 		echo "\t\t\t<div id='rodape'>\n";
 		echo "\t\t\t\t<ul id='menuRodape' class='fundoAzul'>\n";
 		echo "\t\t\t\t\t<li><a href=\"#\">Home</a></li>\n";
-		echo "\t\t\t\t\t<li><a href=\"#\">Produtos</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"produtos.php\">Produtos</a></li>\n";
 		echo "\t\t\t\t\t<li><a href=\"#\">Agenda</a></li>\n";
 		echo "\t\t\t\t\t<li><a href=\"#\">Profissionais</a></li>\n";
-		echo "\t\t\t\t\t<li><a href=\"#\">Contato</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"contato.php\">Contato</a></li>\n";
 		echo "\t\t\t\t</ul>\n";
 		echo "\t\t\t</div>\n";
 		echo "\t\t</div>\n";
