@@ -10,6 +10,7 @@ class Pagina{
 		echo "<html>\n\t<head>\n\t\t<title>$vTitulo</title>\n";
 		echo "\t\t<meta http-equiv='Content-type' content='text/html; charset=utf-8'>\n";
 		echo "\t\t<link rel='stylesheet' type='text/css' href='style/base.css' />\n";
+		echo "\t\t<link rel='stylesheet' type='text/css' href='style/menu.css' />\n";
 	}
 
 	public function adicionarCSS($vCss)
