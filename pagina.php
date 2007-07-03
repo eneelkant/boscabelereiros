@@ -28,11 +28,11 @@ class Pagina{
 		echo "\t\t<div id='pagina'>\n";
 		echo "\t\t\t<div id='topo'>\n\t\t\t\t<h1 id='logo'><div id='banner'></div></h1>\n";
 		echo "\t\t\t\t<ul id='menu'>\n";
-		echo "\t\t\t\t\t<li>Home</li>\n";
-		echo "\t\t\t\t\t<li>Produtos</li>\n";
-		echo "\t\t\t\t\t<li>Agenda</li>\n";
-		echo "\t\t\t\t\t<li>Profissionais</li>\n";
-		echo "\t\t\t\t\t<li>Contato</li>\n";
+		echo "\t\t\t\t\t<li><a href=\"#\">Home</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"#\">Produtos</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"#\">Agenda</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"#\">Profissionais</a></li>\n";
+		echo "\t\t\t\t\t<li><a href=\"#\">Contato</a></li>\n";
 		echo "\t\t\t\t</ul>\n";
 		echo "\t\t\t\t<div id='login'>\n";
 		include("login.php");
