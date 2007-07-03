@@ -4,5 +4,15 @@
 	
 }
 
-#menu {
+#menuRodape {
+        padding: 11px 0 0 0;
+        width: 800px;
+        height: 28px;
+        background-color: #00CCFF;
+}
+
+#menuRodape li{
+	float: left;
+        margin: 0 0 0 90px;
+        font-size: 10pt;
 }
