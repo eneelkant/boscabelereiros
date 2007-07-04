@@ -136,8 +136,8 @@ printNavegador($produtos, $pag, $produtos_por_pagina);
 	<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 	<input type=hidden value=<?php $pag ?> />
 	Nome o produto: <input type=text name='nome' /><br>
-	Descrição: <input type=text name='descricao' /><br>
-	Preço: <input type=text name='preco' /><br>
+	Descri&ccedil;&atilde;o: <input type=text name='descricao' /><br>
+	Pre&ccedil;o: <input type=text name='preco' /><br>
 	Imagem: <input type=file name='imagem' /><br><br>
 	<input id='botao' type=submit name='adicionar' value='Adicionar'/><br>
 </form>
