@@ -41,16 +41,19 @@ class Banco{
 	*/
 	protected function getQuery( $query )
 	{
-		$resultado = mysql_query( $query, $this->mConexao );
+		$resultado = mysql_query( $query, $this->mConexao ) or die(mysql_error());
 		if( !$resultado )
 		{
 			echo "Erro de SQL: " . mysql_error();
 			return FALSE;
 		}
-		
 		$this->mResource = $resultado;
 	}
 
+	public function getRows()
+	{
+		return mysql_num_rows($this->mResource);
+	}	
 	/*
 		GETRESULT - retorna um array com o resultado do ultimo
 	getQuery se a ultima getQuery for um SELECT, se nao retorns
