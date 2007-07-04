@@ -15,7 +15,7 @@ deploy: $(APACHE_BASE)/$(PROJETO)/banco.php $(APACHE_BASE)/$(PROJETO)/crud-produ
 		$(APACHE_BASE)/$(PROJETO)/script/mktree.js $(APACHE_BASE)/$(PROJETO)/style/mais.gif \
 		$(APACHE_BASE)/$(PROJETO)/style/menos.gif $(APACHE_BASE)/$(PROJETO)/style/menu.css \
 		$(APACHE_BASE)/$(PROJETO)/img/logo.png $(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php \
-		$(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php
+		$(APACHE_BASE)/$(PROJETO)/funcionarios.php
 
 ################ arquivos ###################
 
