@@ -14,7 +14,8 @@ deploy: $(APACHE_BASE)/$(PROJETO)/banco.php $(APACHE_BASE)/$(PROJETO)/crud-produ
 		$(APACHE_BASE)/$(PROJETO)/style/home.css $(APACHE_BASE)/$(PROJETO)/usuarios.php \
 		$(APACHE_BASE)/$(PROJETO)/script/mktree.js $(APACHE_BASE)/$(PROJETO)/style/mais.gif \
 		$(APACHE_BASE)/$(PROJETO)/style/menos.gif $(APACHE_BASE)/$(PROJETO)/style/menu.css \
-		$(APACHE_BASE)/$(PROJETO)/img/logo.png
+		$(APACHE_BASE)/$(PROJETO)/img/logo.png $(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php \
+		$(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php
 
 ################ arquivos ###################
 
@@ -38,6 +39,12 @@ $(APACHE_BASE)/$(PROJETO)/usuarios.php : usuarios.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
 $(APACHE_BASE)/$(PROJETO)/crud-usuarios.php : crud-usuarios.php $(APACHE_BASE)/$(PROJETO)
+	cp $< $@
+
+$(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php: crud-funcionarios.php $(APACHE_BASE)/$(PROJETO)
+	cp $< $@
+
+$(APACHE_BASE)/$(PROJETO)/funcionarios.php: funcionarios.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
 # imagens #
