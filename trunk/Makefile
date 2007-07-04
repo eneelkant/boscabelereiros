@@ -5,7 +5,7 @@ PROJETO = boscabelereiros
 BROWSER = firefox
 
 deploy: $(APACHE_BASE)/$(PROJETO)/banco.php $(APACHE_BASE)/$(PROJETO)/crud-produtos.php \
-		$(APACHE_BASE)/$(PROJETO)/home.php $(APACHE_BASE)/$(PROJETO)/pagina.php \
+		$(APACHE_BASE)/$(PROJETO)/pagina.php $(APACHE_BASE)/$(PROJETO)/index.php\
 		$(APACHE_BASE)/$(PROJETO)/produtos.php $(APACHE_BASE)/$(PROJETO)/img/banner.png \
 		$(APACHE_BASE)/$(PROJETO)/img/caso-de-uso.png $(APACHE_BASE)/$(PROJETO)/img/diagrama-classes.png \
 		$(APACHE_BASE)/$(PROJETO)/img/logo.png $(APACHE_BASE)/$(PROJETO)/img/logo-small.png \
@@ -13,7 +13,8 @@ deploy: $(APACHE_BASE)/$(PROJETO)/banco.php $(APACHE_BASE)/$(PROJETO)/crud-produ
 		$(APACHE_BASE)/$(PROJETO)/doc/proposta.pdf $(APACHE_BASE)/$(PROJETO)/crud-usuarios.php \
 		$(APACHE_BASE)/$(PROJETO)/style/home.css $(APACHE_BASE)/$(PROJETO)/usuarios.php \
 		$(APACHE_BASE)/$(PROJETO)/script/mktree.js $(APACHE_BASE)/$(PROJETO)/style/mais.gif \
-		$(APACHE_BASE)/$(PROJETO)/style/menos.gif
+		$(APACHE_BASE)/$(PROJETO)/style/menos.gif $(APACHE_BASE)/$(PROJETO)/style/menu.css \
+		$(APACHE_BASE)/$(PROJETO)/img/logo.png
 
 ################ arquivos ###################
 
@@ -24,7 +25,7 @@ $(APACHE_BASE)/$(PROJETO)/banco.php: banco.php $(APACHE_BASE)/$(PROJETO)
 $(APACHE_BASE)/$(PROJETO)/crud-produtos.php: crud-produtos.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
-$(APACHE_BASE)/$(PROJETO)/home.php: home.php $(APACHE_BASE)/$(PROJETO)
+$(APACHE_BASE)/$(PROJETO)/index.php: index.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
 $(APACHE_BASE)/$(PROJETO)/pagina.php: pagina.php $(APACHE_BASE)/$(PROJETO)
@@ -57,6 +58,9 @@ $(APACHE_BASE)/$(PROJETO)/img/logo-small.png: img/logo-small.png $(APACHE_BASE)/
 
 # estilo #
 $(APACHE_BASE)/$(PROJETO)/style/base.css: style/base.css $(APACHE_BASE)/$(PROJETO)/style
+	cp $< $@
+
+$(APACHE_BASE)/$(PROJETO)/style/menu.css: style/menu.css $(APACHE_BASE)/$(PROJETO)/style
 	cp $< $@
 
 $(APACHE_BASE)/$(PROJETO)/style/home.css: style/home.css $(APACHE_BASE)/$(PROJETO)/style
