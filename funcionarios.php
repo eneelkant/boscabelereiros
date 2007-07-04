@@ -5,7 +5,7 @@
 	include_once("crud-funcionarios.php");
 		
 	/* instancia pagina */
-	$pagina = new Pagina("Funcionários");
+	$pagina = new Pagina("Funcion&aacute;rios");
 	$pagina->adicionarCSS("produtos.css");
 	$pagina->adicionarJS("mktree.js");
 	
@@ -69,9 +69,9 @@
 ?>
 
 <ul class='mktree' id='tree1'> 
-<li>Adicionar Funcionário <ul> <li>
+<li>Adicionar Funcion&aacute;rio <ul> <li>
 <form id='adicionar' enctype="multipart/form-data" action="funcionarios.php" method="post">
-	<p>Adicionar novo funcionario</p><br>
+	<p>Adicionar novo funcion&aacute;rio</p><br>
 	<input type="hidden" name="MAX_FILE_SIZE" value="30000" />
 	Nome: <input type=text name='nome' /><br>
 	Login: <input type=text name='login' /><br>
@@ -81,7 +81,7 @@
 	CPF: <input type=text name='cpf' /><br>
 	Telefone Residencial: <input type=text name='tel_res' /><br>
 	Telefone Celular: <input type=text name='tel_cel' /><br>
-	Função: <input type=text name='funcao' /><br>
+	Fun&ccedil;&atilde;o: <input type=text name='funcao' /><br>
 	Salario: <input type=text name='salario' /><br>	
 	Foto: <input type=file name='foto' /><br><br>
 	<input id='botao' type=submit name='adicionar' value='Adicionar'/><br>
