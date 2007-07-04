@@ -1,0 +1,11 @@
+.left {
+	float: left;
+}
+
+.right {
+	clear: both;
+}
+
+#contatos {
+	padding: 90px 0 0 460px;
+}
