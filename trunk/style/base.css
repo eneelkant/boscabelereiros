@@ -15,18 +15,19 @@ body{
 }
 
 #logo {
-	width: 100px;
-	height: 76px;
+	margin-top: 5px;
+	width: 101px;
+	height: 78px;
 	background-image: url("../img/logo-small.png");
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 }
 
 #banner {
-	margin: 5px 0 0 100px;
+	margin-left: 110px;
 	width: 402px;
 	height: 77px;
 	background-image: url("../img/banner.png");
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 }
 
 #tituloConteudo {
@@ -34,6 +35,7 @@ body{
   	font-family: "utopia", sans-serif; 
 	font-size: 22pt;
 	font-weight: bold;
+	clear: both;
 }
 
 .fundoAzul{
