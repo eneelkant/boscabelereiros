@@ -15,7 +15,8 @@ deploy: $(APACHE_BASE)/$(PROJETO)/banco.php $(APACHE_BASE)/$(PROJETO)/crud-produ
 		$(APACHE_BASE)/$(PROJETO)/script/mktree.js $(APACHE_BASE)/$(PROJETO)/style/mais.gif \
 		$(APACHE_BASE)/$(PROJETO)/style/menos.gif $(APACHE_BASE)/$(PROJETO)/style/menu.css \
 		$(APACHE_BASE)/$(PROJETO)/img/logo.png $(APACHE_BASE)/$(PROJETO)/crud-funcionarios.php \
-		$(APACHE_BASE)/$(PROJETO)/funcionarios.php
+		$(APACHE_BASE)/$(PROJETO)/funcionarios.php $(APACHE_BASE)/$(PROJETO)/contato.php \
+		$(APACHE_BASE)/$(PROJETO)/img/contato.jpg
 
 ################ arquivos ###################
 
@@ -35,6 +36,9 @@ $(APACHE_BASE)/$(PROJETO)/pagina.php: pagina.php $(APACHE_BASE)/$(PROJETO)
 $(APACHE_BASE)/$(PROJETO)/produtos.php: produtos.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
+$(APACHE_BASE)/$(PROJETO)/contato.php: contato.php $(APACHE_BASE)/$(PROJETO)
+	cp $< $@
+
 $(APACHE_BASE)/$(PROJETO)/usuarios.php : usuarios.php $(APACHE_BASE)/$(PROJETO)
 	cp $< $@
 
@@ -49,6 +53,9 @@ $(APACHE_BASE)/$(PROJETO)/funcionarios.php: funcionarios.php $(APACHE_BASE)/$(PR
 
 # imagens #
 $(APACHE_BASE)/$(PROJETO)/img/banner.png: img/banner.png $(APACHE_BASE)/$(PROJETO)/img
+	cp $< $@
+
+$(APACHE_BASE)/$(PROJETO)/img/contato.jpg: img/contato.jpg $(APACHE_BASE)/$(PROJETO)/img
 	cp $< $@
 
 $(APACHE_BASE)/$(PROJETO)/img/caso-de-uso.png: img/caso-de-uso.png $(APACHE_BASE)/$(PROJETO)/img

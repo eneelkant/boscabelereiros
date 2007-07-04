@@ -72,7 +72,7 @@ if ($_GET['remove']) {
 	$item = $produtos->getResult();
 
 	/* deleta imagem */
-	unlink('/var/www/boscabelereiros/img/produtos/' . $item['imagem']);
+	unlink('./img/produtos/' . $item['imagem']);
 
 	/* deleta do banco de dados */
 	$produtos->remover($_GET['remove']);
@@ -88,7 +88,7 @@ if ($_POST['adicionar']) {
 		$_FILES['imagem']['type'] == "image/jpeg")
 	{
 		/* upload arquivo */
-		move_uploaded_file($_FILES['imagem']['tmp_name'], '/var/www/boscabelereiros/img/produtos/' . $_FILES['imagem']['name'])
+		move_uploaded_file($_FILES['imagem']['tmp_name'], './img/produtos/' . $_FILES['imagem']['name'])
 		or die("nao foi possivel carregar arquivo: " . $_FILES['imagem']['name']);
 
 		/* insere no bd */
