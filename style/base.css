@@ -15,19 +15,9 @@ body{
 }
 
 #logo {
-	margin-top: 5px;
-	width: 101px;
-	height: 78px;
-	background-image: url("../img/logo-small.png");
-	background-repeat: no-repeat;
-}
-
-#banner {
-	margin-left: 110px;
-	width: 402px;
-	height: 77px;
-	background-image: url("../img/banner.png");
-	background-repeat: no-repeat;
+	background-image: url("../logo-small.png");
+	width: 64px;
+	height: 42px;
 }
 
 #tituloConteudo {
@@ -35,7 +25,6 @@ body{
   	font-family: "utopia", sans-serif; 
 	font-size: 22pt;
 	font-weight: bold;
-	clear: both;
 }
 
 .fundoAzul{
