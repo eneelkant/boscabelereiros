@@ -15,9 +15,18 @@ body{
 }
 
 #logo {
+	width: 100px;
+	height: 76px;
 	background-image: url("../img/logo-small.png");
-	width: 64px;
-	height: 42px;
+    background-repeat: no-repeat;
+}
+
+#banner {
+	margin: 5px 0 0 100px;
+	width: 402px;
+	height: 77px;
+	background-image: url("../img/banner.png");
+    background-repeat: no-repeat;
 }
 
 #tituloConteudo {

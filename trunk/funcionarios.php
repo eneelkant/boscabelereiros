@@ -22,7 +22,7 @@
 		$item = $funcionarios->getResult();
 	
 		/* deleta imagem */
-		unlink('C:\Desenvolvimento\xampp\htdocs\Boscabelereiros\img\funcionarios\ ' . $item['foto']);
+		unlink('./img/funcionarios/' . $item['foto']);
 	
 		/* deleta do banco de dados */
 		$funcionarios->remover($_GET['remove']);
@@ -38,7 +38,7 @@
 			$_FILES['foto']['type'] == "image/jpeg")
 		{
 			/* upload arquivo */
-			move_uploaded_file($_FILES['foto']['tmp_name'], 'C:\Desenvolvimento\xampp\htdocs\Boscabelereiros\img\funcionarios\ ' . $_FILES['foto']['name'])
+			move_uploaded_file($_FILES['foto']['tmp_name'], './img/funcionarios/' . $_FILES['foto']['name'])
 			or die("nao foi possivel carregar arquivo: " . $_FILES['foto']['name']);
 	
 			/* insere no bd */
