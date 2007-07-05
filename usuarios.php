@@ -109,42 +109,6 @@ elseif( $_GET['listar'] )	/* é pra listar todos? */
 
 ?>
 
-<<<<<<< .mine
-<ul>
-	<li><input type="button" id="btnAdiciona" onclick="abrefechaaba(document.getElementById('divAdiciona'),this);" value="+" /> Adicionar Cliente
-		<ul>
-			<li>
-				<div id="divAdiciona"></div>
-			</li>
-		</ul>
-	</li>
-<div>&nbsp;</div>
-	<li><input type="button" id="btnRemove" onclick="abrefechaaba(document.getElementById('divRemove'),this);" value="+" /> Remover Cliente
-		<ul>
-			<li>
-				<div id="divRemove"></div>
-			</li>
-		</ul>
-	</li>
-<div>&nbsp;</div>
-	<li> <input type="button" id="btnAtualiza" onclick="abrefechaaba(document.getElementById('divAtualiza'),this);" value="+" />Atualizar Dados do Cliente	<!--listar os dados atuais nos campos do formulario-->
-		<ul>
-			<li><form method='post' action=''>
-				<div id="divAtualiza"></div><div id='dados'></div>
-			</li>
-		</ul>
-	</li>
-<div>&nbsp;</div>
-	<li> Listar Clientes <!como listar todos?>
-		<ul>
-			<li>
-				<form id='listar' action='usuarios.php' method='get'>
-					<input id='botao' type='submit' name='listar' value='Listar'/><br>
-				</form>
-			</li>
-		</ul>
-	</li>
-=======
 <ul class='mktree' id='tree1'>
 	<li> Adicionar Cliente <ul><li>
 		<form id='adicionar' action="usuarios.php" method="post">
@@ -160,7 +124,6 @@ elseif( $_GET['listar'] )	/* é pra listar todos? */
 		</form>
 	</li></ul></li>
 </ul>
->>>>>>> .r45
 
 <ul class='mktree' id='tree1'>
 	<li> Listar Clientes	<ul><li>
