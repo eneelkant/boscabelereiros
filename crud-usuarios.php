@@ -24,9 +24,6 @@ class CrudUsuario extends Banco
 		$this->getQuery("SELECT MAX(id) AS id FROM Pessoa");
 		$resultado = $this->getResult();
 		$this->getQuery("INSERT INTO Cliente (pessoa) VALUES ( '".$resultado['id']."')");
-	/*lembrar de adicionar tb na tabela cliente*/
-	//SELECT TABLE_NAME,AUTO_INCREMENT FROM information_schema.`TABLES` WHERE TABLE_NAME LIKE 'Pessoa'
-	// query acima usada para obter o indice do AUTO_INCREMENT, ou seja, o ultimo dado inserido	
 	}
 	
 	/* remove dados do cliente de acordo com seu id */
@@ -36,17 +33,18 @@ class CrudUsuario extends Banco
 	}
 	
 	/* atualiza os dados do cliente com id recebido */
-	public function atualizar( $id, $cliente )
-	{/*tambem vai precisar saber qual é o id da pessoa, o id recebido é do cliente*/
+	public function atualizar( $cliente )
+	{
 		$this->getQuery( "UPDATE Pessoa
-			SET login = '" . $cliente['login'] .
-			"' senha = '" . $cliente['senha'] .
-			"' nome = '" . $cliente['nome'] .
-			"' cpf = '" . $cliente['cpf'] .
-			"' rg = '" . $cliente['rg'] .
-			"' telefone_res = '" . $cliente['telefone_res'] . 
-			"' telefone_cel = '" . $cliente['telefone_cel'] .
-			"' email = '" . $cliente['email'] ."' WHERE id = ".$id);
+			SET login = '".$cliente['login']."',
+				senha = '".$cliente['senha']."',
+				nome = '".$cliente['nome']."',
+				email = '".$cliente['email']."',
+				cpf = '".$cliente['cpf']."',
+				rg = '" . $cliente['rg']."',
+				telefone_res = '".$cliente['telefone_res']."',
+				telefone_cel = '".$cliente['telefone_cel']."'
+			WHERE id = '".$cliente['id']."'" );
 	}
 	
 	public function getByNome( $nome )
@@ -54,10 +52,10 @@ class CrudUsuario extends Banco
 		$this->getQuery( "SELECT boscabelereiros.Cliente.pessoa, boscabelereiros.Pessoa.* FROM boscabelereiros.Cliente INNER JOIN boscabelereiros.Pessoa ON boscabelereiros.Cliente.pessoa = boscabelereiros.Pessoa.id WHERE boscabelereiros.Pessoa.nome LIKE '$nome'" );
 	}
 
-	/* lista os dados por cliente de acordo com seu id */
-	public function listaDados( $id )
+	/* lista os dados por cliente de acordo com seu nome */
+	public function listaDados( $nome )
 	{
-		$this->getQuery( "SELECT Cliente.id, Pessoa.* FROM Cliente INNER JOIN Pessoa ON Cliente.pessoa = Pessoa.id WHERE Cliente.id = $id" );
+		$this->getQuery( "SELECT Cliente.id, Pessoa.* FROM Cliente INNER JOIN Pessoa ON Cliente.pessoa = Pessoa.id WHERE Pessoa.nome = '$nome'" );
 	}
 	
 	/* lista todos os clientes no banco */
