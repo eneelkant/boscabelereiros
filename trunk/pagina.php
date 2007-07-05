@@ -36,7 +36,7 @@ class Pagina{
 		echo "\t\t\t\t\t<li><a href=\"contato.php\">Contato</a></li>\n";
 		echo "\t\t\t\t</ul>\n";
 		echo "\t\t\t\t<div id='login'>\n";
-		include("login.php");
+/*		include("login.php");  */
 		echo "\t\t\t\t</div>\n";
 		echo "\t\t\t</div>\n";
 		echo "\t\t\t<div id='conteudo'>\n";
